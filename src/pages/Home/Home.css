@@ -1,0 +1,23 @@
+.centered-main{
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.calc-inputs{
+    margin-top: 5%;
+}
+
+.monthly-input{
+    width: 16em;
+}
+
+.year-input{
+    width: 16em;
+}
+
+.submit-button{
+    width: 8em;
+}
