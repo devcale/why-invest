@@ -54,6 +54,12 @@ export const Home = () => {
     ) {
       checks = false;
     }
+    if (
+        event.target.name === "endYear" &&
+        (event.target.value < data.startYear || event.target.value < 1990)
+      ) {
+        checks = false;
+      }
     if (event.target.name === "monthly" && event.target.value < 0) {
       checks = false;
     }
@@ -72,9 +78,9 @@ export const Home = () => {
       
       let increment = 1 + rate / 100;
       for (let i = startYear; i < endYear; i++) {
-        
-        result = result * increment;
         result+=yearly;
+        result = result * increment;
+        
       }
       result = result.toFixed(2);
     return result;
@@ -94,7 +100,8 @@ export const Home = () => {
     let increment = 0;
     for (let i = startYear; i < endYear; i++) {
       increment = 1 + sp500[i] / 100;
-      result = result * increment + yearly;
+      result += yearly;
+      result = result * increment;
     }
     result = result.toFixed(2);
 
@@ -198,14 +205,14 @@ export const Home = () => {
           </div>
           <div className="result-box">
             <div className="big-number">
-              ${numberWithCommas(data.monthly * 12 * (data.endYear - data.startYear))}
+              ${numberWithCommas((data.monthly * 12 * (data.endYear - data.startYear)).toFixed(2))}
             </div>
             <div className="box-title">Savings</div>
             <div className="results">
               {" "}
               Had you started saving up ${data.monthly} every month since{" "}
               {data.startYear}, you would have $
-              {numberWithCommas(data.monthly * 12 * (data.endYear - data.startYear))} by {data.endYear}.
+              {numberWithCommas((data.monthly * 12 * (data.endYear - data.startYear)).toFixed(2))} by {data.endYear}.
             </div>
           </div>
         </div>
