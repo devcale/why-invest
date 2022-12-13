@@ -13,3 +13,30 @@
 .results{
     margin-top: 5%;
 }
+
+.results-section{
+    margin-top: 5%;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.box-one{
+    width: 20%;
+}
+
+.box-two{
+    width: 20%;
+}
+
+.box-three{
+    width: 20%;
+}
+
+.big-number{
+    text-align: center;
+    font-size: 3em;
+}
