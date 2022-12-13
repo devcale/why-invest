@@ -69,10 +69,12 @@ export const Home = () => {
   const getInvestment = (monthly, startYear, endYear, rate) => {
     let result = 0;
     let yearly = monthly * 12;
-      result = yearly;
+      
       let increment = 1 + rate / 100;
       for (let i = startYear; i < endYear; i++) {
-        result = result * increment + yearly;
+        
+        result = result * increment;
+        result+=yearly;
       }
       result = result.toFixed(2);
     return result;
@@ -88,7 +90,7 @@ export const Home = () => {
     }
     
     let yearly = monthly * 12;
-    result = yearly;
+    
     let increment = 0;
     for (let i = startYear; i < endYear; i++) {
       increment = 1 + sp500[i] / 100;
@@ -176,7 +178,7 @@ export const Home = () => {
             <div className="big-number">
               ${numberWithCommas(getInvestment(data.monthly, data.startYear, data.endYear, data.rate))}
             </div>
-            <div className="box-title">Custom scenario</div>
+            <div className="box-title">{data.rate}% rate</div>
             <div className="results">
               {" "}
               Had you started investing ${data.monthly} every month since{" "}
@@ -186,7 +188,7 @@ export const Home = () => {
           </div>
           <div className="result-box">
             <div className="big-number">${numberWithCommas(getSP(data.monthly, data.startYear, data.endYear))}</div>
-            <div className="box-title">S&P500 scenario</div>
+            <div className="box-title">S&P500</div>
             <div className="results">
               {" "}
               Had you started investing ${data.monthly} every month since{" "}
@@ -198,7 +200,7 @@ export const Home = () => {
             <div className="big-number">
               ${numberWithCommas(data.monthly * 12 * (data.endYear - data.startYear))}
             </div>
-            <div className="box-title">Savings scenario</div>
+            <div className="box-title">Savings</div>
             <div className="results">
               {" "}
               Had you started saving up ${data.monthly} every month since{" "}
