@@ -3,11 +3,15 @@
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
 }
 
 .calc-inputs{
     margin-top: 5%;
+}
+
+.input-field{
+    margin: auto;
 }
 
 .results{
@@ -20,23 +24,162 @@
 
 .flex-container{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.box-one{
+.result-box{
     width: 20%;
 }
 
-.box-two{
-    width: 20%;
-}
 
-.box-three{
-    width: 20%;
+.box-title{
+    text-align: center;
+    font-size: 1.5em;
 }
 
 .big-number{
     text-align: center;
     font-size: 3em;
+    
+    padding-bottom: 15%;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .centered-main{
+        text-align: center;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .result-box{
+        margin-top: 2%;
+        padding: 5%;
+        background-color: rgb(245, 245, 245);
+        width: 80%;
+    }
+
+    .big-number{
+        text-align: center;
+        font-size: 3em;
+        padding-bottom: 5%;
+    }
+
+    .results{
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .input-field{
+        margin-bottom: 5%;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .centered-main{
+        text-align: center;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .result-box{
+        margin-top: 2%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: rgb(245, 245, 245);
+        width: 80%;
+    }
+
+    .big-number{
+        text-align: center;
+        font-size: 3em;
+        padding-bottom: 5%;
+    }
+
+    .results{
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .input-field{
+        margin-bottom: 5%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .centered-main{
+        text-align: center;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .result-box{
+        margin-top: 0%;
+        padding-top: 0%;
+        padding-bottom: 5%;
+        background-color: white;
+        width: 20%;
+    }
+
+    .big-number{
+        text-align: center;
+        font-size: 3em;
+        padding-bottom: 10%;
+    }
+
+    .results{
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .input-field{
+        margin-bottom: auto;
+    }
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .flex-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .result-box{
+        width: 20%;
+    }
+} 
